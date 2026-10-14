@@ -217,7 +217,28 @@ sudo systemctl status nginx
 # Tes perpanjangan otomatis SSL
 sudo certbot renew --dry-run
 ```
-> Let's Encrypt akan diperbarui secara otomatis oleh `certbot.timer` bawaan sistem Ubuntu/Debian.
+---
+
+## 🌐 Menambahkan Service Lain di VPS yang Sama (Multi-Domain)
+
+Jika VPS Anda juga digunakan untuk menjalankan aplikasi lain (misal di port 8080 dengan domain `app2.domainanda.com`):
+- **SANGAT DISARANKAN** membuat file konfigurasi baru terpisah di `/etc/nginx/sites-available/<nama-service>.conf` (jangan digabung ke `lingua-lms.conf`).
+- Template siap pakai telah disediakan di [**`nginx/example-other-service.conf`**](file:///Users/ppa/Dev/lang-lms/nginx/example-other-service.conf).
+- **Langkah Cepat**:
+  ```bash
+  # 1. Salin template ke sites-available
+  sudo cp nginx/example-other-service.conf /etc/nginx/sites-available/app2.conf
+  
+  # 2. Sesuaikan nama domain dan port target (misal: 127.0.0.1:8080)
+  sudo nano /etc/nginx/sites-available/app2.conf
+  
+  # 3. Aktifkan & reload Nginx
+  sudo ln -s /etc/nginx/sites-available/app2.conf /etc/nginx/sites-enabled/
+  sudo nginx -t && sudo systemctl reload nginx
+  
+  # 4. Pasang SSL domain baru
+  sudo certbot --nginx -d app2.domainanda.com
+  ```
 
 ---
 
