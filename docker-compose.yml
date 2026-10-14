@@ -1,0 +1,47 @@
+services:
+  # ==========================================
+  # 1. Backend Service (Express + Drizzle ORM)
+  # Port Host: 3000
+  # ==========================================
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend
+    container_name: lingua_backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET:-lingua_super_secret_jwt_key_prod_2026}
+    networks:
+      - app_network
+
+  # ==========================================
+  # 2. Frontend Web Server (Vue 3 SPA + Nginx)
+  # Port Host: 3001
+  # ==========================================
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
+    container_name: lingua_frontend
+    restart: unless-stopped
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+# ==========================================
+# Network Internal
+# ==========================================
+networks:
+  app_network:
+    name: lingua_network
+    driver: bridge

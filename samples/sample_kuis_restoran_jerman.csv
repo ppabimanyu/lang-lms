@@ -1,0 +1,11 @@
+type,question,answer,options,translation,explanation
+choice,Ich möchte ___ Kaffee bitte.,"einen","einen|eine|ein|einer",Saya ingin secangkir kopi tolong.,"Kaffee bergender maskulin (der Kaffee) dan berfungsi sebagai objek langsung (Akkusativ) sehingga menggunakan 'einen'."
+input,Die ___ bitte! Wir möchten zahlen.,Rechnung,,Minta bon / tagihannya tolong! Kami ingin membayar.,"Kata benda bahasa Jerman untuk tagihan atau bon restoran adalah 'die Rechnung'."
+choice,Trinkst du gerne ___?,"Tee","Tee|Brot|Pizza|Suppe",Apakah kamu suka minum teh?,"Tee (teh) adalah satu-satunya pilihan berwujud minuman pada daftar opsi."
+sentence,Wir möchten bitte zahlen.,Wir möchten bitte zahlen.,,Kami ingin membayar tolong.,"Pola kalimat sopan standar ketika hendak meminta pembayaran di kafe atau restoran Jerman."
+input,Ein Glas ___ bitte.,Wasser,,Segelas air putih tolong.,"Air dalam bahasa Jerman berartikel netral yaitu 'das Wasser'."
+choice,Das Essen schmeckt sehr ___!,"lecker","lecker|bitter|schlecht|sauer",Makanannya terasa sangat lezat!,"Kata sifat 'lecker' berarti enak atau lezat dalam konteks makanan."
+sentence,Zusammen oder getrennt bitte?,Zusammen oder getrennt bitte?,,Digabung atau bayar masing-masing tolong?,"Pertanyaan khas pelayan restoran di Jerman saat menagih pembayaran."
+input,Was ___ Sie als Spezialität?,empfehlen,,Apa yang Anda rekomendasikan sebagai menu spesial?,"Kata kerja 'empfehlen' (merekomendasikan) berkonjugasi tetap untuk subjek formal Sie."
+choice,Ich esse ein Stück ___.,"Kuchen","Kuchen|Kaffee|Wasser|Tee",Saya makan sepotong kue.,"Kuchen (kue) berpasangan tepat dengan frasa takaran 'ein Stück' (sepotong)."
+sentence,Ich hätte gerne einen Tee mit Zitrone.,Ich hätte gerne einen Tee mit Zitrone.,,Saya boleh minta secangkir teh dengan lemon.,Pola ungkapan sangat sopan (Konjunktiv II) yang lazim dipakai saat memesan di restoran.
